@@ -70,6 +70,50 @@ Thus, after encrypting the original image with AES first, and then, regenerating
 shares gives more better and noisy image. Now, the image will require at-least k shares
 along with the symmetric key in order to decrypt the image to its original form.
 
+## Graphical User Interface <a name='gui'></a>
+GUI for the program is made using Matlab 2015a. It has all the functionalities required
+for Encryption and Decryption. Following are the steps to run the GUI :-
+
+### 1. Step 1:
+Execute command run knshare in matlab terminal. The KNshare main screen
+appears.
+
+![alt tag](https://raw.githubusercontent.com/srajat/Visual-Cryptography-Using-K-N-Secret-Sharing/master/images/Screenshot%20from%202017-07-02%2014:58:23.png)
+
+### 2. Step 2:
+
+Click on ENCRYPT button to open the encryption window.
+
+![alt tag](https://raw.githubusercontent.com/srajat/Visual-Cryptography-Using-K-N-Secret-Sharing/master/images/Screenshot%20from%202017-07-02%2014:58:29.png)
+
+### 3. Step 3:
+
+Click on BROWSE button to open the File selector. Select the file.
+Now proceed on filling the value of K, N and enter a secure password to encrypt the
+image. After the process completes, the user is presented with a "Shares Generated"
+message.
+
+The current Matlab directory now has n number of shares generated. They are
+named as share1.png, share2.png, share3.png, and so on.
+
+### 4. Step 4:
+
+Now we can proceed to Decryption process. Click on DECRYPT from KNshare
+screen. Decryption Window appears.
+
+Now the User has to select the number of avaliable shares with him, and click on
+"Start Decryption". Also the password that had been choosen while encrypting the
+image must also be entered. Entering wrong password generates another noisy
+image which is undecipherable.
+
+### 5. Step 5:
+
+After process completes, we are greeted with a figure saying "Merged K shares".
+This is the encrypted output.
+
+After sometime, the unencrypted image appears on the right. It is same as the orig-
+inal image. After successful completion the message appears "Image Successfully
+Decrypted".
 
 ## Applications <a name='applications'></a>
 Following are some of the areas in which our project can be helpful -
