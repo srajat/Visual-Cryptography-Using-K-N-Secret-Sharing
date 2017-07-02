@@ -4,25 +4,22 @@ In this project we take any image which is to be shared secretly. This image is 
 
 ![alt tag](https://raw.githubusercontent.com/srajat/Visual-Cryptography-Using-K-N-Secret-Sharing/master/images/Screenshot%20from%202017-07-02%2014:57:42.png)
 
+
+
 ## Table of contents
 
 - [Installation](#installation)
     - [Prerequisites](#prerequisites)
     - [Using MATLAB 2015a](#using-matlab-2015a)
-    - [Technologies Used](#technologies-used)
-- [Features](#features)
-    - [Users](#users)
-        - [Login And Register](#login-and-register)
-        - [List Elections](#list-elections)
-        - [Vote!](#vote)
-        - [Show Stats](#show-stats)
-    - [Admin](#admin)
-        - [Add Elections](#add-elections)
-        - [Edit Elections](#edit-elections)
-        - [Add Candidates](#add-candidates)
-        - [Candidate Details](#candidate-details)
+    - [Algorithms Used](#algo)
+- [Observations](#observe)
+    - [AES encryption results](#aes)
+- [Graphical User Interface](#gui)  
+- [Applications](#applications)  
 - [Contributers](#contributers)
 - [Links](#links)
+
+
 
 ## Installation <a name='installation'></a>
 
@@ -44,6 +41,9 @@ In this project we take any image which is to be shared secretly. This image is 
 Implementing 2 visual cryptographic algorithms namely,
 1. Visual Cryptography by Naor and Shamir for Monochrome images
 2. KN Sharing Scheme for colored images
+
+
+
 
 ## Observations <a name='observe'></a>
 
@@ -69,6 +69,9 @@ Algorithm is added to make the image more secure.
 Thus, after encrypting the original image with AES first, and then, regenerating the
 shares gives more better and noisy image. Now, the image will require at-least k shares
 along with the symmetric key in order to decrypt the image to its original form.
+
+
+
 
 ## Graphical User Interface <a name='gui'></a>
 GUI for the program is made using Matlab 2015a. It has all the functionalities required
@@ -115,6 +118,9 @@ After sometime, the unencrypted image appears on the right. It is same as the or
 inal image. After successful completion the message appears "Image Successfully
 Decrypted".
 
+
+
+
 ## Applications <a name='applications'></a>
 Following are some of the areas in which our project can be helpful -
 
@@ -131,6 +137,8 @@ It is obvious that transferring our data through N channels is more secure than
 transferring all of it through one channel. We can use the above algorithm to
 encrypt and break data into N different parts and transfer the data simultaneously
 through N channels. End user can get K shares and ignore the other N − K shares.
+
+
 
 
 ## Contributers <a name='contributers'></a>
