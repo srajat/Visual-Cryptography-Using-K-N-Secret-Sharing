@@ -32,77 +32,69 @@ In this project we take any image which is to be shared secretly. This image is 
 
 ### Using Matlab 2015a <a name='using-matlab-2015a'></a>
 <pre>
-1. Create a new <del>Project</del> Website in Visual Studio  
-2. Fork this repo  
-3. Copy all the files in this repo to website's folder  
-4. Configure Database on the machine accordingly  
-5. Run the website  
+1. Copy all matlab files in a folder to your computer
+2. Open Matlab 2015a
+3. Change matlab's current path to the folder  
+4. Find the file knshare.fig, execute command "run knshare" in Matlab's console  
+5. Follow the GUI
 </pre>
 
-### Technologies Used <a name='technologies-used'></a>
+### Algorithms Used <a name='algo'></a>
 
-1. <b>Materialize 0.97 (for css)</b>
-2. ASP.NET framework 5
-3. HTML and C#
-4. SQL
+Implementing 2 visual cryptographic algorithms namely,
+1. Visual Cryptography by Naor and Shamir for Monochrome images
+2. KN Sharing Scheme for colored images
 
-## Features <a name='features'></a>
+## Observations <a name='observe'></a>
 
-> USERS <a name='users'></a>
+We experimented K-N sharing algorithm on Lena image.
+Number of shares (n) = 10
+Number of shares to be taken (k) = 6,
+The experimental result after encryption by the kn encryption algorithm is given below:
 
-### Login and Register <a name='login-and-register'></a>
-This app manages individual user accounts and provides facility for user to register himself to this app. It contains an <code>admin</code> section to manage all current elections and candidates.
+![alt tag](https://raw.githubusercontent.com/srajat/Visual-Cryptography-Using-K-N-Secret-Sharing/master/images/Screenshot%20from%202017-07-02%2014:58:00.png)
 
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture2.PNG)
+We can get the original image only by stacking k or more shares. If value of k is less than
+required (in this case k = 6), we will get a partial image. After choosing any number of
+shares of all the generated shares, the reconstructed image is:
 
-### List Elections <a name='list-elections'></a>
-All current elections are listed in Elections tab and their details provided. User can apply as a candidate before the beginning of the election and wait for approval. During election any eligible user can vote for selected candidates.
+![alt tag](https://raw.githubusercontent.com/srajat/Visual-Cryptography-Using-K-N-Secret-Sharing/master/images/Screenshot%20from%202017-07-02%2014:58:05.png)
 
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture4.PNG)
+### AES encryption results <a name='aes'></a>
+A symmetric key based encryption (AES encryption) at both the ends of KN Shares
+Algorithm is added to make the image more secure.
 
-### Vote! <a name='vote'></a>
-Click <code>vote</code> to enter the voting page for any election. Click <code>vote</code> in front of any candidate you would like to vote.
+![alt tag](https://raw.githubusercontent.com/srajat/Visual-Cryptography-Using-K-N-Secret-Sharing/master/images/Screenshot%20from%202017-07-02%2014:58:12.png)
 
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture12.PNG)
+Thus, after encrypting the original image with AES first, and then, regenerating the
+shares gives more better and noisy image. Now, the image will require at-least k shares
+along with the symmetric key in order to decrypt the image to its original form.
 
-### Show Stats <a name='show-stats'></a>
-When an Election has ended stats option becomes active. It shows the all candiadates sorted by number of votes. It also shows various statistics regarding the election.
 
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture5.PNG)
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture6.PNG)
+## Applications <a name='applications'></a>
+Following are some of the areas in which our project can be helpful -
 
-> ADMIN <a name='admin'></a>
+• DISTRIBUTED SYSTEMS
+Suppose we have N distributed servers. Traditionally if we store a file in only one
+server, there is a high risk that if it breaks or get hacked, all of our data will be
+lost. So we would like to store our information in a distributed manner, with each
+server storing a part of the information. We can encrypt and break our data into N
+different parts with each part going into a server. Even if N − K servers are broken,
+we can still generate our original data using the K alive servers.
 
-### Admin Panel <a name=''></a>
-Go to the admin panel by <code>/admin.aspx</code>. Currently there is no security for admin panel but it will be provided in the future. There are options avaliable to Add Elections, Edit Elections and Add Candidates.
+• DATA TRANSFER SECURITY
+It is obvious that transferring our data through N channels is more secure than
+transferring all of it through one channel. We can use the above algorithm to
+encrypt and break data into N different parts and transfer the data simultaneously
+through N channels. End user can get K shares and ignore the other N − K shares.
 
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture7.PNG)
-
-### Add Elections <a name='add-elections'></a>
-Admin can add Elections by providing the details of the election. Once successfully added, Election is shown in the Election's list to all users.
-
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture8.PNG)
-
-### Edit Elections <a name='edit-elections'></a>
-Admin can edit any Election once an Election is created. However Election details cannot be changed if the Election is going on at that time.
-
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture9.PNG)
-
-### Add Candidates <a name='add-candidates'></a>
-After a user applies as a candidate for a particular Election, Admin can grant permission to that candidate to appear in the election using this menu. He can make the decision based on his details which are provided.
-
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture10.PNG)
-
-### Candidate Details <a name='candidate-details'></a>
-This option is avaliable exclusively for admin to view details of any registered user. This information can be used in making the right decision to select him as a candidate or not based on the criteria that admin decides for any election.
-
-![alt tag](https://raw.githubusercontent.com/srajat/Online-Voting-System/master/images/Capture11.PNG)
 
 ## Contributers <a name='contributers'></a>
 * Rajat Saxena
 * Satyam Poddar
 * Pranav Pandey
-* Abhinav Mishra
+* Ankush Jangid
+* Divyesh Soni
 
 ## Links <a name='links'></a>
 
